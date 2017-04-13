@@ -1,9 +1,11 @@
 package smart.factory;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
+@MapperScan("smart.factory.dao")//mapper 接口类扫描包配置
 public class SmartFactoryApplication {
     // @SpringBootApplication：Spring Boot 应用的标识
     // Application很简单，一个main函数作为主入口。
