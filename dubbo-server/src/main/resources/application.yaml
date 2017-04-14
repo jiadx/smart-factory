@@ -1,0 +1,15 @@
+##dubbo zookeeper
+spring:
+  dubbo:
+    application:
+      name: provider
+    registry:
+      address: zookeeper://10.11.117.81:2181
+    scan: smart.factory.dubbo
+    protocol:
+      name: dubbo
+      port: 20880
+    
+##port
+server:
+  port: 8002
