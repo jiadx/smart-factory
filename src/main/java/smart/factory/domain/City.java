@@ -1,9 +1,11 @@
 package smart.factory.domain;
 
+import java.io.Serializable;
+
 /**
  * Created by jiadx on 17-4-13.
  */
-public class City {
+public class City implements Serializable{
     /**
      * 城市编号
      */

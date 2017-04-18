@@ -7,6 +7,18 @@ spring:
     password: root
     driver-class-name: com.mysql.jdbc.Driver
 
+  redis:
+    database: 0
+    host: 10.11.117.81
+    port: 6379
+    password:
+    pool:
+      max-active: 8
+      max-idle: 8
+      max-wait: -1
+      min-idle: 0
+    timeout: 0
+
 ##Mybatis 配置
 mybatis:
   type-aliases-package: smart.factory.domain
