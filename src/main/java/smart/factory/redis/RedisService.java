@@ -16,13 +16,15 @@ import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.data.redis.serializer.Jackson2JsonRedisSerializer;
 
 import java.lang.reflect.Method;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by YY on 17/04/2017.
  */
 @Configuration
 @EnableCaching
-public class RedisConfig extends CachingConfigurerSupport {
+public class RedisService extends CachingConfigurerSupport {
     @Bean
     public KeyGenerator keyGenerator() {
         return new KeyGenerator() {
@@ -39,12 +41,15 @@ public class RedisConfig extends CachingConfigurerSupport {
         };
     }
 
-    @SuppressWarnings("rawtypes")
+    @SuppressWarnings("rawtypes") //rawtypes是说传参时也要传递带泛型的参数
     @Bean
     public CacheManager cacheManager(RedisTemplate redisTemplate) {
         RedisCacheManager rcm = new RedisCacheManager(redisTemplate);
         //设置缓存过期时间
-        //rcm.setDefaultExpiration(60);//秒
+//        rcm.setDefaultExpiration(60);
+        Map<String, Long> map = new HashMap<String, Long>();
+        map.put("test", 60L);
+        rcm.setExpires(map);
         return rcm;
     }
 

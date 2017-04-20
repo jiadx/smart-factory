@@ -6,7 +6,7 @@
     <groupId>smart.factory</groupId>
     <artifactId>smart-factory</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <packaging>war</packaging>
+    <packaging>jar</packaging>
 
     <name>smart-factory</name>
     <description>Demo project for Spring Boot</description>
@@ -85,6 +85,18 @@
             <!--<artifactId>druid</artifactId>-->
             <!--<version>1.0.18</version>-->
         <!--</dependency>-->
+
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>2.6.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+            <version>2.6.1</version>
+        </dependency>
 
         <dependency>
             <groupId>org.springframework.boot</groupId>

@@ -7,6 +7,12 @@ spring:
     password: root
     driver-class-name: com.mysql.jdbc.Driver
 
+    #使用Spring JDBC初始化数据库
+    schema: classpath:sql/schema.sql
+    data: classpath:sql/data.sql
+    initialize: true  #是不是要初始化这些数据库文件
+    continue-on-error: true  #有了错误是否继续运行
+
   redis:
     database: 0
     host: 10.11.117.81
@@ -17,7 +23,7 @@ spring:
       max-idle: 8
       max-wait: -1
       min-idle: 0
-    timeout: 0
+    timeout: 60000
 
 ##Mybatis 配置
 mybatis:
