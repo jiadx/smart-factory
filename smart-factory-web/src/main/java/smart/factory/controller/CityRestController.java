@@ -11,13 +11,13 @@ import smart.factory.service.CityService;
  * Created by jiadx on 17-4-13.
  */
 @RestController
-@RequestMapping(value = "/api/city/")
+@RequestMapping(value = "/api/city")
 public class CityRestController {
     @Autowired
     private CityService cityService;
 
-    @ApiOperation(value = "获取某一个城市", notes = "根据url的id来获取获取某一个城市详细信息")
-    @ApiImplicitParam(name = "id", value = "城市id", required = true, dataType = "Long")
+    @ApiOperation(value = "获取某一个城市", notes = "根据id来获取获取某一个城市详细信息")
+    @ApiImplicitParam(name = "id", value = "城市id", required = true, dataType = "Long", paramType = "query")
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public City findOneCity(@PathVariable("id") Long id) {
         return cityService.findCityById(id);
@@ -34,7 +34,7 @@ public class CityRestController {
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-    public void modifyCity(@PathVariable("id") Long id) {
+    public void deleteCity(@PathVariable("id") Long id) {
         cityService.deleteCity(id);
     }
 }
