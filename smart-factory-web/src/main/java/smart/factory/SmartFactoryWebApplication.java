@@ -5,7 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-@MapperScan("smart.factory.dao")//mapper 接口类扫描包配置
+@MapperScan("smart.factory.mapper")//mapper 接口类扫描包配置
 public class SmartFactoryWebApplication {
 	// @SpringBootApplication：Spring Boot 应用的标识
 	// Application很简单，一个main函数作为主入口。
