@@ -1,13 +1,10 @@
 package smart.factory.service.impl;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import smart.factory.domain.City;
 import smart.factory.mapper.CityMapper;
 import smart.factory.redis.RedisUtil;
-import smart.factory.service.BaseService.impl.AbstractService;
 import smart.factory.service.CityService;
 
 /**
@@ -15,8 +12,6 @@ import smart.factory.service.CityService;
  */
 @Service
 public class CityServiceImpl extends AbstractService<City> implements CityService {
-
-    private static final Logger LOGGER = LoggerFactory.getLogger(CityServiceImpl.class);
 
     @Autowired
     private CityMapper cityMapper;

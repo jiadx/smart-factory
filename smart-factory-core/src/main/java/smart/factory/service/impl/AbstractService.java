@@ -1,7 +1,7 @@
-package smart.factory.service.BaseService.impl;
+package smart.factory.service.impl;
 
 import smart.factory.mapper.BaseMapper;
-import smart.factory.service.BaseService.BaseService;
+import smart.factory.service.BaseService;
 
 import java.io.Serializable;
 import java.util.List;

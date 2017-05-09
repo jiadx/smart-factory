@@ -7,8 +7,6 @@ import org.springframework.web.bind.annotation.*;
 import smart.factory.domain.City;
 import smart.factory.service.CityService;
 
-import java.util.List;
-
 /**
  * Created by jiadx on 17-4-13.
  */

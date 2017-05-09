@@ -1,4 +1,4 @@
-package smart.factory.service.BaseService;
+package smart.factory.service;
 
 import java.io.Serializable;
 import java.util.List;

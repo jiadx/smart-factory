@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="smart.factory.mapper.CityMapper">
-    <resultMap id="BaseResultMap" type="smart.factory.domain.City">
+    <resultMap id="CityResultMap" type="smart.factory.domain.City">
         <result column="id" property="id"/>
         <result column="province_id" property="provinceId"/>
         <result column="city_name" property="cityName"/>
@@ -10,31 +10,25 @@
 
     <parameterMap id="City" type="smart.factory.domain.City"/>
 
-    <sql id="Base_Column_List">
+    <sql id="City_Column_List">
     id, province_id, city_name, description
     </sql>
 
-    <select id="findById" resultMap="BaseResultMap" parameterType="java.lang.Long">
+    <select id="getByPrimaryKey" resultMap="CityResultMap" parameterType="java.lang.Long">
         select
-        <include refid="Base_Column_List"/>
+        <include refid="City_Column_List"/>
         from city
         where id = #{id}
     </select>
 
-    <select id="findAllCity" resultMap="BaseResultMap">
-        select
-        <include refid="Base_Column_List"/>
-        from city
-    </select>
-
-    <insert id="saveCity" parameterMap="City" useGeneratedKeys="true" keyProperty="id">
+    <insert id="save" parameterMap="City" useGeneratedKeys="true" keyProperty="id">
     insert into
     city(id,province_id,city_name,description)
     values
     (#{id},#{provinceId},#{cityName},#{description})
     </insert>
 
-    <update id="updateCity" parameterMap="City">
+    <update id="update" parameterMap="City">
         update
         city
         set
@@ -51,7 +45,7 @@
         id = #{id}
     </update>
 
-    <delete id="deleteCity" parameterType="java.lang.Long">
+    <delete id="removeByPrimaryKey" parameterType="java.lang.Long">
     delete from
     city
     where

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="smart.factory.mapper.CityMapper">
+    <resultMap id="RoleResultMap" type="smart.factory.domain.City">
+        <result column="id" property="id"/>
+        <result column="name" property="name"/>
+        <result column="code" property="code"/>
+        <result column="description" property="description"/>
+    </resultMap>
+
+    <parameterMap id="Role" type="smart.factory.domain.Role"/>
+
+    <sql id="Role_Column_List">
+        id, name, code, description
+    </sql>
+
+    <select id="getByUserId" resultMap="RoleResultMap" parameterType="java.lang.Long">
+        select
+        <include refid="Role_Column_List"/>
+        from role
+        where userId = #{userId}
+    </select>
+
+    <select id="getAll" resultMap="RoleResultMap" parameterType="java.lang.String">
+        select
+        <include refid="Role_Column_List"/>
+        from user
+        where username = #{username}
+    </select>
+
+</mapper>
